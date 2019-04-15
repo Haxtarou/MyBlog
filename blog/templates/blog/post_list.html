@@ -3,21 +3,16 @@
     <title>Haruki's blog</title>
   </head>
   <body>
-    <div class="opening">
-      <h1>Djangoはめちゃくちゃめんどいということ</h1>
-      <p>なぜ難しいのか</p>
-      <em>それはHTML,CSS,Python,HTTPが複雑に絡まったものをまとめ上げているから</em>
-      <strong>じゃあ何時間勉強すればいいの？</strong>
-      <br>
-      <b>3時間ぐらいかな</b>
+    <div>
+      <h1><a href="/">Django Girls Blog</a></h1>
     </div>
-    <br>
-    <br>
-    <div class="affi">
-      <em>とりあえずbitmexしときな？</em>
-      <a href="https://www.bitmex.com/app/trade/XBTUSD">BitMEX登録リンク</a>
+
+  {% for post in posts %}
+    <div>
+      <p> published: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaksbr }}</p>
     </div>
-    <p>Hi there!</p>
-    <p>It works!</p>
+  {% endfor %}
   </body>
 </html>
